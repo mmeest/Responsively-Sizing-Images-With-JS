@@ -20,6 +20,6 @@ window.addEventListener('resize', imgResizeFunction);
 var img = document.getElementsByTagName('img')
 ```
 
-# HAPPY CODING !
+# HAPPY CODING !!!
 
 ![footer](https://capsule-render.vercel.app/api?type=slice&color=auto&height=130&section=footer)
