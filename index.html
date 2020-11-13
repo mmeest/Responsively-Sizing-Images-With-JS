@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(62, 64, 70);
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            color: bisque;
+        }
+        img{
+            margin: 7px;
+        }
+    </style>
+</head>
+<body onload="imgResizeFunction()">
+    <p>
+        <h2>Resize different size images to same hight responsivley<br>depending on screen height (1/5)<br>using JavaScript function</h2>
+    </p>
+    <img src="img/001.JPG" alt="">
+    <img src="img/002.JPG" alt="">
+    <img src="img/003.JPG" alt="">
+    <img src="img/004.JPG" alt="">
+    <img src="img/005.JPG" alt="">
+    <img src="img/006.JPG" alt="">
+    <img src="img/007.JPG" alt="">
+    <script>
+        // to make images sizes responsive to window resize
+        // eventlistener will call the resize function
+        window.addEventListener('resize', imgResizeFunction);
+
+        function imgResizeFunction(){
+            var img = document.getElementsByTagName('img')
+            var x = window.innerHeight / 5
+            var y = img.height / x
+            var z = img.width / y
+
+            // convert object 'img' to array
+            var imgArray = Object.values(img)
+
+            // iterate thru array
+            imgArray.forEach(sizeFunction)
+
+            function sizeFunction(item){
+                item.style.height = x.toString() + 'px'
+                item.style.width = z.toString() + 'px'
+            }
+        }
+    </script>
+</body>
+</html>
